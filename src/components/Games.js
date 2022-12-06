@@ -53,7 +53,7 @@ const Games = () => {
         }
       }}
     >
-      <div key={g.id} className="  grid lg:grid-cols-5 rounded-t-lg shadow-lg bg-white gap-2 h-64">
+      <div key={g.id} className="  grid lg:grid-cols-5 rounded-t-lg shadow-lg bg-white gap-2 ">
         <div className="col-start-1 col-end-3">
           <MiniLogos className="logo" logo={g.visitor_team.abbreviation} />
           <div className=" font-extrabold ">{g.visitor_team.name}</div>
@@ -106,7 +106,7 @@ const Games = () => {
         <span>{game.home_team_score}</span>
         <span>{game.home_team.abbreviation}</span>
       </span> */}
-      <div className="games-calendar">
+      <div className="games-calendar flex justify-center mt-5">
         <Calendar value={d} locale={"ka-GE"} onClickDay={onClickDay} />
       </div>
       
