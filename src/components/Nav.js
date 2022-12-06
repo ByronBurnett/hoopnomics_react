@@ -35,14 +35,14 @@ const Nav = () => {
     return (  
    <>  
         <header className="bg-primary p-2.5"> 
-            <nav className="max-w-full grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-4 items-center mx-auto text-center " >
+            <nav className="grid grid-cols-5 max-w-full items-center mx-auto text-center  " >
     
         <Link className="text-white" to="/">Home</Link>
         <Link className="text-white" to="/highlights">Highlights</Link>
         
-        <div className="">
+             <h1 className="">  
             <img src={image} alt="logo" />
-        </div>  
+            </h1>
     
         <Link className="text-white" to="/teams">NBA Teams</Link>
         <Link className="text-white" to ="/games">NBA Scores</Link>
