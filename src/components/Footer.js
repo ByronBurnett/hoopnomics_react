@@ -73,7 +73,7 @@ const Footer = () => {
 </footer>
 
 <div className="text-white bg-primary mx-auto">
-  <p className="text-center">Copyright &copy; 2022 Hoopnomics all Rights Reserved</p>
+  <p className="text-center pb-2">Copyright &copy; 2022 Hoopnomics all Rights Reserved</p>
 </div>
 
 
