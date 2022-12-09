@@ -35,13 +35,13 @@ const Nav = () => {
     return (  
    <>  
         <header className="bg-primary p-2.5"> 
-            <nav className="grid grid-cols-5 max-w-full items-center mx-auto text-center  " >
+            <nav>
     
         <Link className="text-white" to="/">Home</Link>
         <Link className="text-white" to="/highlights">Highlights</Link>
         
-             <h1 className="">  
-            <img src={image} alt="logo" />
+             <h1 > 
+            <img src={image} alt="logo"  />
             </h1>
     
         <Link className="text-white" to="/teams">NBA Teams</Link>
@@ -70,7 +70,7 @@ const Nav = () => {
         ))}
          <h1 className="font-bold">Total:${cart.getTotalCost().toFixed(2)}</h1>
          
-
+ 
          <button className="bg-green-800 text-white rounded p-2" onClick={checkout}>
                  Purchase items!
          </button>

@@ -11,34 +11,31 @@ const SinglePlayer = (props) => {
     
     
     const {personId} = useParams();
-       console.log(personId)
+    console.log(personId)
 
 
-       const result = data.league.standard.map(person => {
-         const teamItem = info.league.standard.find(item => item.teamId === person.teamId )
-         
-           person.teamName = teamItem
-           ? teamItem.fullName
-            :null
-         
-           return data
-         
-           })
-           console.log(result)
- 
- 
-           const changeLogo = data.league.standard.map(person => {
-             const teamItem = info.league.standard.find(item => item.teamId === person.teamId )
-             
-               person.abbreviation = teamItem
-               ? teamItem.tricode
-                :null
-             
-               return info
-             
-               })
-               console.log(changeLogo)
-          
+  const result = data.league.standard.map(person => {
+  const teamItem = info.league.standard.find(item => item.teamId === person.teamId )     
+      person.teamName = teamItem
+    ? teamItem.fullName
+    :null
+
+   return data
+
+      })
+ console.log(result)
+
+ const changeLogo = data.league.standard.map(person => {
+  const teamItem = info.league.standard.find(item => item.teamId === person.teamId )
+   person.abbreviation = teamItem
+    ? teamItem.tricode
+        :null
+
+  return info
+        
+      })
+ console.log(changeLogo)
+
  
  
 

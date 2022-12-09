@@ -8,10 +8,7 @@ const Highlights = () => {
       const [videos, setVideos] = useState([]);
       const [limit, setLimit ]  = useState(21)
       
-
- 
-    
-      const RedHighlights = () => {
+        const RedHighlights = () => {
 
       axios.get('https://www.reddit.com/r/nba/search.json?q=flair%3AHighlight&restrict_sr=on&sort=new&t=all&limit='+limit)
      .then(async res => {  
@@ -22,13 +19,12 @@ const Highlights = () => {
 
       
 
-     })
+          })
     
    
       }
 
    
-
 
      useEffect(()   => {
 
