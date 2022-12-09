@@ -108,13 +108,13 @@ const handleSubmit = event => {
            />
     </div>
 
-     <div className="mx-auto" >
-     <div className=" w-full px-3 ">
-             <label  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 m-4 text-center">Message</label>
+     <div className="w-full md:w-1/2 px-3 mx-auto" >
+     <div className>
+             <label  className=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 m-4 text-center">Message</label>
              <textarea
-               className="p-2.5 w-96 appearance-none block bg-gray-200 text-gray-700 border
+               className=" appearance-none block w-full bg-gray-200 text-gray-700 border
                border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none
-                focus:bg-white focus:border-gray-500 "
+                focus:bg-white focus:border-gray-500"
                value={message}
                onChange={event => setMessage(event.target.value)}
                rows="5"
