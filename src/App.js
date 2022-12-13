@@ -17,6 +17,7 @@ import GameStats from './components/GameStats';
 import Cancel from './pages/Cancel';
 import Success from './pages/Success';
 import CartProvider from './CartContext';
+import AllPlayers from './components/AllPlayers';
 
 
 
@@ -78,6 +79,10 @@ import CartProvider from './CartContext';
      
      <Route path="/success">
          <Success  />
+     </Route>
+
+     <Route path="/nbaplayers">
+       <AllPlayers />  
      </Route>
 
   </Switch>
