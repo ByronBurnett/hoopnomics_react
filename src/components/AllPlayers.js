@@ -81,15 +81,15 @@ import { useState, useEffect } from "react";
 
        <h2 className="font-bold p-2 m-10 text-2xl text-center">NBA Historical Statistics</h2>
 
-         <div className="flex justify-center p-4"> 
-      <form  onSubmit={handleSubmit} className="w-full max-w-md bg-white rounded-lg p-2 h-56 shadow-lg m-2">
-      <label className="font-bold p-2">
+         <div className="flex justify-center p-2 text-center"> 
+      <form  onSubmit={handleSubmit} className="flex items-center w-full max-w-lg bg-white rounded-lg p-2 shadow-lg m-2">
+      <label className="font-bold ">
         Name:
         <input 
         type="text"
         onChange={(e) => setPlayerName(e.target.value.split(" ").join("_"))}
         placeholder="please enter player name"
-        className="p-2 font-bold border-2 border-gray-900"
+        className="p-2 font-bold "
         />
       </label>
       

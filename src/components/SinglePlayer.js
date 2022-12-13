@@ -49,7 +49,7 @@ const SinglePlayer = (props) => {
 {data.league.standard.filter(player => player.personId === personId).map((player, index)  =>  (
 
 
-<div className=" max-w-xs  bg-white text-center border-4 border-indigo-500 shadow-xl"    key={index}>
+<div className=" max-w-xs  bg-white text-center border-4 border-primary shadow-xl"    key={index}>
 
  
    

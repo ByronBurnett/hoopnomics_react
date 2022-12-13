@@ -56,7 +56,7 @@ const PlayerStats = (props) => {
  
   return (
     
-      <div className="grid grid-cols-10 max-w-5xl mx-auto mt-5 px-5 pb-5">
+      <div className="grid grid-cols-10 max-w-5xl mx-auto mt-5 px-5 pb-5 border-primary">
         <div className=" player-stats">
         <h5>GP</h5>
           {playerStats ? playerStats.games_played : ""} 

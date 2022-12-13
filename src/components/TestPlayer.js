@@ -62,7 +62,7 @@ const TestPlayer = props => {
 {data.league.standard.filter(player => player.abbreviation === abbreviation).map((player, index)  =>  (
 
 
-<div className=" bg-white text-center border-4 border-indigo-600  max-w-sm hover:shadow-xl"    key={index}>
+<div className=" bg-white text-center border-4 border-primary  max-w-sm hover:shadow-xl"    key={index}>
 <Link  style={{color: 'black'}}    to={{   
 pathname: "/players/" + player.personId,
 state: {
