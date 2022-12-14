@@ -12,21 +12,17 @@ import { useState, useEffect } from "react";
       const [playerStats, setPlayerStats] = useState([]);
       const [season, setSeason] = useState();
      
+     
 
   
    const   PlayerId = () => {    
 
       axios.get(`https://www.balldontlie.io/api/v1/players?search=${playerName}`)
       .then(async res => { 
-        if(res.data.data[0] === undefined){
-          alert("This player is either injured or hasn't played yet!")
-        } else if(res.data.data.length > 1){
-         alert("Please specify the name more!")
-        } else{
-          await PlayerStats(res.data.data[0].id)
-          
-  
-        }
+        console.log(res.data.data[0])
+       
+        
+         PlayerStats(res.data.data[0].id)
       }).catch(err => {
         console.log(err)
       })
@@ -151,6 +147,8 @@ import { useState, useEffect } from "react";
        </div>
       </form>
       </div>
+
+      
       
       <div className="flex justify-center">
       <div className="w-full max-w-3xl bg-white rounded-lg font-bold p-2 m-5 flex justify-center text-center shadow-lg "> 

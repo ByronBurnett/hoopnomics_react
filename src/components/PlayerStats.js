@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { SuperLogo } from "./Logos";
-import { useParams, useLocation } from "react-router-dom";
+import {  useLocation } from "react-router-dom";
 
 const PlayerStats = (props) => {
   
@@ -9,11 +8,10 @@ const PlayerStats = (props) => {
      console.log(props, "props")
      console.log(location, " useLocation Hook");
   
-     const {id, firstName, lastName} = location.state;
+     const { firstName, lastName} = location.state;
      
 
-    const personId = useParams();
-
+    
 
   const [playerInfo, setPlayerInfo] = useState([]);
   const [playerStats, setPlayerStats] = useState([]);
