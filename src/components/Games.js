@@ -107,7 +107,7 @@ const Games = () => {
         <span>{game.home_team.abbreviation}</span>
       </span> */}
       <div className="games-calendar flex justify-center mt-5">
-        <Calendar value={d} locale={"ka-GE"} onClickDay={onClickDay} />
+        <Calendar value={d} locale={"en-GB"} onClickDay={onClickDay} />
       </div>
       
       <div className=" max-w-6xl text-center mx-auto gap-2 m-5 p-5 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 ">{gameList}</div>
