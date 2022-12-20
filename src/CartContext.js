@@ -1,4 +1,4 @@
-import { React, createContext, useState } from "react";
+import { React, createContext, useState, useEffect } from "react";
 import { productsArray, getProductData } from "./productsStore";
 
 
@@ -12,10 +12,34 @@ export const CartContext = createContext({
     getTotalCost: () => {}
 });
 
+
+
 export function CartProvider({children}) {
-    const [cartProducts, setCartProducts] = useState([]);
+    const [cartProducts, setCartProducts] = useState(() => {
+      const savedItem = localStorage.getItem('my store')
+      const parsedItem = JSON.parse(savedItem)
+      return parsedItem || [];
+
+    });
     
     // [ { id: 1 , quantity: 3 }, { id: 2, quantity: 1 } ]
+     
+    useEffect(() => {
+        localStorage.setItem('my store', JSON.stringify(cartProducts))
+     
+    }, [cartProducts]);
+
+   
+     
+
+
+
+   
+   
+
+    
+   
+    
 
     function getProductQuantity(id) {
         const quantity = cartProducts.find(product => product.id === id)?.quantity;
@@ -26,6 +50,7 @@ export function CartProvider({children}) {
 
         return quantity;
     }
+
 
     function addOneToCart(id) {
         const quantity = getProductQuantity(id);

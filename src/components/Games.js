@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { MiniLogos } from "./Logos";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
-import IMAGES from "../img";
+
 
 
 

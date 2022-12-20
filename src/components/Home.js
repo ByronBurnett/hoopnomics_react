@@ -21,7 +21,7 @@ const Home = () => {
         <h3 className="bg-primary rounded-t-lg text-center text-white p-2 m-2 ">Welcome to Hoopnomics</h3> 
         <p className="font-bold p-2">Hoopnomics is a basketball based brand that help fans, coaches, scouts and players understand data from a players perspective.</p>
         <div className="flex justify-center"> 
-        <a href="/"><button type="button" className="bg-primary text-white p-2 m-2">Click Here</button></a>
+        <a href="/"><button type="button" className="bg-primary rounded text-white p-2 m-2">Click Here</button></a>
         </div>
         </div>
 

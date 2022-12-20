@@ -1,4 +1,4 @@
-import { React, useContext } from "react";
+import { React, useContext,} from "react";
 import { CartContext } from "../CartContext";
 
 
@@ -11,6 +11,7 @@ const ProductCard = (props) => { // props.product is the product we are selling
     const productQuantity = cart.getProductQuantity(product.id);
     console.log(cart.items)
     
+   
     
     return ( 
         
