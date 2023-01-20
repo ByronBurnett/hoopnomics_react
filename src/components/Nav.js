@@ -9,7 +9,7 @@ import CartProduct from "./CartProduct";
 
 const Nav = () => {
 
-   const cart = useContext(CartContext)
+ const cart = useContext(CartContext)
     
   const [buttonPopup, setButtonPopup] = useState(false);   
  

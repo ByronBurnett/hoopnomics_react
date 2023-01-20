@@ -15,6 +15,9 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
 
+
+//Route to Checkout
+
 app.post("/checkout", async (req, res) => {
     /*
     req.body.items

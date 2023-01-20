@@ -15,6 +15,7 @@ export const CartContext = createContext({
 
 
 export function CartProvider({children}) {
+    
     const [cartProducts, setCartProducts] = useState(() => {
       const savedItem = localStorage.getItem('my store')
       const parsedItem = JSON.parse(savedItem)
@@ -29,16 +30,6 @@ export function CartProvider({children}) {
      
     }, [cartProducts]);
 
-   
-     
-
-
-
-   
-   
-
-    
-   
     
 
     function getProductQuantity(id) {

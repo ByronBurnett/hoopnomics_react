@@ -28,6 +28,7 @@ const GameStats = props => {
       const data = await res.json();
       setAllStats(data.data);
     };
+
     const getAllTeams = async () => {
       const res = await fetch(`https://www.balldontlie.io/api/v1/teams`);
       const data = await res.json();
