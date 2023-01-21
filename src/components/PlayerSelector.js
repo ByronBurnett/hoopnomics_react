@@ -207,7 +207,7 @@ const PlayerSelector = () => {
           }}
         />
         <button
-          className="bg-dark text-cyan p-2 sm:p-4 rounded uppercase"
+          className="bg-white border-2 border-black font-bold ml-2 mr-2 text-cyan p-2 sm:p-4 rounded uppercase"
           onClick={() => {
             getResults();
            
@@ -252,7 +252,7 @@ const PlayerSelector = () => {
             return (
               <div
                 key={player.id}
-                className="border rounded p-2 m-2 cursor-pointer hover:border-darkest text-lg "
+                className="border-2 border-black bg-white rounded p-2 m-2 cursor-pointer hover:border-darkest text-lg "
                 style={{
                  
                 }}
@@ -260,7 +260,7 @@ const PlayerSelector = () => {
                   getPlayerSeasonalAverages(player);
                 }}
               >
-                <div className="bg-darkest bg-opacity-50 rounded ">
+                <div className="bg-darkest font-bold rounded ">
                   {player.first_name} {player.last_name}
                 </div>
               </div>
@@ -334,7 +334,7 @@ const PlayerSelector = () => {
       {results.data && results.data.length > 0 && (
         <div className="flex justify-center py-4 px-12 md:px-24">
           <div
-            className="uppercase border p-4 rounded bg-darkest cursor-pointer hover:border-deepcyan hover:bg-cream hover:text-dark"
+            className="uppercase border-2 border-black bg-white font-bold p-4 rounded bg-darkest cursor-pointer hover:border-deepcyan hover:bg-cream hover:text-dark"
             onClick={() => {
               handleClear();
             }}
@@ -344,7 +344,10 @@ const PlayerSelector = () => {
         </div>
       )}
 
-   <PlayerList playerStats={playerStats} removePlayer={removePlayer} updateStatsBySeason={updateStatsBySeason} />
+   <PlayerList 
+   playerStats={playerStats} 
+   removePlayer={removePlayer} 
+   updateStatsBySeason={updateStatsBySeason} />
    <PlayerTable  playerStats={playerStats}  />
     </div>
 

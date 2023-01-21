@@ -59,8 +59,8 @@ const Home = () => {
     
     <div className="tall bg-white rounded-lg shadow-lg">
       <h3 className="bg-primary rounded-t-lg text-center text-white p-2 m-2" >Player Statistics</h3>
-     <p className="font-bold p-2" >Search any player from any season from 1979 to the current year.</p>
-     <p className="font-bold p-2">Compare your favorite players from any season and get their season totals. Most people argue about who is the best well the number's don't lie. Use our search from to find historical data.</p>
+     <p className="font-bold p-2" >Search any player from any season starting in 1979 to the current year.</p>
+     <p className="font-bold p-2">Compare your favorite players from any season and get their season totals. Most people argue about who is the best well the number's don't lie. Use our search form to find historical data.</p>
      <p className="font-bold p-2">Hoopnomics back their arguments with real life statistical data. Join us as we bring reliable data to prove our assumptions</p>
      <Link to={{pathname: "/nbaplayers"}}> 
      <div className="flex justify-center"> 

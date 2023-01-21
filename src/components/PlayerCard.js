@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { LargeLogo } from "./Logos";
 
 
 
@@ -83,9 +84,9 @@ console.log(player)
    
     return ( 
 
-        <div className="border flex w-96 rounded m-2">
+        <div className="border flex w-96 rounded m-2 shadow-lg">
         <div
-          className="w-1/2 flex items-center justify-center text-2xl font-bold hover:opacity-20 cursor-pointer"
+          className="w-1/2 flex items-center justify-center text-2xl bg-white  font-bold hover:opacity-20 cursor-pointer"
           style={{
            
           }}
@@ -93,15 +94,16 @@ console.log(player)
            removePlayer(player.uuid) 
           }}
         >
-          <div className="bg-darkest bg-opacity-50 p-1 rounded">
+          <div className=" bg-opacity-50 p-1 rounded ">
             {player.team}
+            <LargeLogo className="logo" logo={player.team}  />
           </div>
         </div>
-        <div className="w-1/2 flex flex-col p-4 justify-center ">
-          <div className="text-xl text-black ">
+        <div className="w-1/2 flex flex-col p-4 justify-center bg-white  ">
+          <div className="text-xl text-black font-bold ">
             {player.first_name} {player.last_name}
           </div>
-          <div className=" flex">
+          <div className=" flex font-bold">
             <div>Season:</div>
             <select
               name="year"

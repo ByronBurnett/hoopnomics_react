@@ -17,7 +17,7 @@ import PlayerSelector from "./PlayerSelector";
                
       
      <div> 
-        <div className="text-2xl m-5 p-2 text-center">
+        <div className="text-2xl font-bold m-5 p-2 text-center">
             <h2>Compare NBA Player Yearly Stats</h2>
         </div>
 
