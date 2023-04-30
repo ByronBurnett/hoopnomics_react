@@ -2,19 +2,40 @@ import React from "react";
 import image from "../img/White logo - no background.png";
 import { Link} from 'react-router-dom';
 import { Fragment } from "react";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Modal from "./Modal";
-import { CartContext } from "../CartContext";
-import CartProduct from "./CartProduct";
+import { CartContext } from "../Context/CartContext";
+import CartProduct from "./Cart/CartProduct";
+import { UserContext } from "../Context/UserContext";
+import Sidebar from "./Home/Sidebar";
+
+
+
+
 
 const Nav = () => {
+const {setUserInfo, userInfo} = useContext(UserContext);
 
- const cart = useContext(CartContext)
-    
-  const [buttonPopup, setButtonPopup] = useState(false);   
+
+
  
+   useEffect(() => {
+      fetch('http://localhost:4001/profile',  {
+       credentials: 'include',
+   
+      }).then(response => {
+         response.json().then(userInfo => {
+       setUserInfo(userInfo);
+         });
+      })
+   
+     }, [])
+ 
+ 
+const cart = useContext(CartContext)
+const [buttonPopup, setButtonPopup] = useState(false);   
  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
-      
+   
   const checkout = async  () => {
     await fetch('http://localhost:4000/checkout', {
       method: "POST",
@@ -31,28 +52,85 @@ const Nav = () => {
     })
   }
 
+  
+  const logout = () => {
+    fetch('http://localhost:4001/logout', {
+      credentials: 'include',
+      method: 'POST',
+    })
+    setUserInfo(null);
+  }
+
+
+
+  const username = userInfo?.username;
+
+  
+       
+
+  
 
     return (  
    <>  
         <header className="bg-primary p-2.5"> 
-            <nav>
-    
-        <Link className="text-white" to="/">Home</Link>
-        <Link className="text-white" to="/highlights">Highlights</Link>
+            <nav >
+           
+            
+             
+         {username && (
+            <>
+           
+            <h1>
+              {}
+            </h1>
+            
+            <Link to="/create">Create new post</Link>
+
+            <h1 > 
+            <img src={image} alt="logo"  />
+           </h1>
+            
+            <a onClick={logout}>Logout</a>
+
+          
+            </> )}
+
+            {!username && (
+              
+              
+              <>
+
+              <h1>{}</h1>
+               
+      <Link className="text-white" to ="/register">Register</Link>
         
              <h1 > 
             <img src={image} alt="logo"  />
             </h1>
-    
-        <Link className="text-white" to="/teams">NBA Teams</Link>
-        <Link className="text-white" to ="/games">NBA Scores</Link>
+        
+        <Link className="text-white" to ="/login">Login</Link>
+        
+               
+               </>
+            )}
+       
+
      
         <button onClick={() => setButtonPopup(true)} className="relative w-20 h-7 justify-self-center col-start-5 bg-indigo-600 border-2 border-stone-50"><i className="fa-solid badge fa-cart-shopping text-white "></i>
          <span className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-red-700 text-white items-center rounded-full">{productsCount}</span>
       </button>
+           
+     
+     
 </nav>
 
 </header>
+         
+   
+<Sidebar />
+
+
+
 
    <Modal trigger={buttonPopup} setTrigger={setButtonPopup}>
       
@@ -86,7 +164,7 @@ const Nav = () => {
      </div>
 
     
-
+     
     </Modal>
     </>
 

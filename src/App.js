@@ -1,23 +1,29 @@
 import React from 'react'
 import Nav from './components/Nav';
-import Home from './components/Home';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Home from './components/Home/Home';
+import Contact from './components/Home/Contact';
+import Footer from './components/Home/Footer';
 import Highlights from './components/Highlights';
-import Section from './components/Section';
-import Teams from './components/team';
+import Section from './components/Home/Section';
+import Teams from './components/Teams/team';
 import Podcast from './components/Podcast';
-import TestPlayer from './components/TestPlayer';
-import PlayerStats from './components/PlayerStats';
-import SinglePlayer from './components/SinglePlayer';
-import Games from './components/Games';
+import TestPlayer from './components/Teams/TestPlayer';
+import PlayerStats from './components/Teams/PlayerStats';
+import SinglePlayer from './components/Teams/SinglePlayer';
+import Games from './components/Games/Games';
 import Store from './pages/Store';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import GameStats from './components/GameStats';
+import GameStats from './components/Games/GameStats';
 import Cancel from './pages/Cancel';
 import Success from './pages/Success';
-import CartProvider from './CartContext';
-import AllPlayers from './components/AllPlayers';
+import CartProvider from './Context/CartContext';
+import AllPlayers from './components/Stats Compare/AllPlayers';
+import Blogpage from './components/Blog/Blogpage';
+import Create from './components/Blog/Create';
+import PostPage from './components/Blog/PostPage';
+import LoginPage from './components/LoginPage'
+import RegisterPage from './components/RegisterPage';
+import { UserContextProvider } from './Context/UserContext';
 
 
 
@@ -26,7 +32,9 @@ import AllPlayers from './components/AllPlayers';
   
   
  return (
+ 
      <CartProvider> 
+      <UserContextProvider> 
      <Router>  
             
   <div className="App">
@@ -35,6 +43,7 @@ import AllPlayers from './components/AllPlayers';
       <Route exact path="/">
        <Home /> 
        <Contact />
+
        <Section />
        </Route>
 
@@ -86,10 +95,34 @@ import AllPlayers from './components/AllPlayers';
        <AllPlayers />  
      </Route>
 
+     <Route path="/blogs">
+       <Blogpage />  
+     </Route>
+
+     <Route path="/create">
+     <Create />
+     </Route>
+
+     <Route path="/post/:id">
+      <PostPage   />
+     </Route>
+
+     <Route path="/login">
+      <LoginPage  />
+     </Route>
+
+     <Route path="/register">
+      <RegisterPage  />
+     </Route>
+
+
+    
+
   </Switch>
    <Footer />
 </div>
-  </Router>
+  </Router> 
+  </UserContextProvider>
   </CartProvider>
  
    
