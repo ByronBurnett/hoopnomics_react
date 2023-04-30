@@ -1,8 +1,8 @@
 import React from "react";
-import data from '../Database/db.json';
-import info from '../Database/team.json'
+import data from '../../data/db.json';
+import info from '../../data/team.json'   
 import { useParams } from "react-router-dom";
-import { LargeLogo } from "../Logos";
+import { LargeLogo } from "../../assets/Logos";
 
 
 

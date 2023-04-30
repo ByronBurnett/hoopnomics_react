@@ -1,5 +1,5 @@
 import React from "react";
-import PlayerCard from "./PlayerCard";
+import PlayerCard from "../Stats Compare/PlayerCard";
 
 const PlayerList = ({playerStats, removePlayer, updateStatsBySeason}) => {
     

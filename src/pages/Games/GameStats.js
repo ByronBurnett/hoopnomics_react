@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { LargeLogo } from "../Logos";
+import { LargeLogo } from "../../assets/Logos";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 

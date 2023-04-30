@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from 'react';
 import axios from "axios";
-import PlayerList from "./PlayerList";
+import PlayerList from "../Stats Compare/PlayerList";
 import { v4 as uuidv4 } from "uuid";
 import PlayerTable from "./PlayerTable";
 

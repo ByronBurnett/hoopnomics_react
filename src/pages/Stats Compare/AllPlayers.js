@@ -1,6 +1,6 @@
 import React from "react";
 
-import PlayerSelector from "./PlayerSelector";
+import PlayerSelector from "../Stats Compare/PlayerSelector";
 
 
 

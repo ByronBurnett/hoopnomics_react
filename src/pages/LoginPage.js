@@ -1,7 +1,7 @@
 import { React, useContext } from "react";
 import { useState } from "react";
 import {useHistory} from "react-router-dom";
-import { UserContext } from "../Context/UserContext";
+import { UserContext } from "../context/UserContext";
 
 const LoginPage = () => {
     

@@ -1,5 +1,5 @@
 import { React, createContext, useState, useEffect } from "react";
-import { productsArray, getProductData } from "../components/productsStore";
+import { productsArray, getProductData } from "../pages/Cart/productsStore";
 
 
 export const CartContext = createContext({

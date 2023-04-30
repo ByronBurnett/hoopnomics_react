@@ -8,7 +8,7 @@
 
 
 
-import IMAGES from "../assets/img";
+import IMAGES from "../../assets/img";
 
 const productsArray = [
 

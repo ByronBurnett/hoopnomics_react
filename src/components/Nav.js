@@ -1,13 +1,13 @@
 import React from "react";
-import image from "../img/White logo - no background.png";
+import image from ".././assets/img/White logo - no background.png";
 import { Link} from 'react-router-dom';
 import { Fragment } from "react";
 import { useState, useContext, useEffect } from "react";
-import Modal from "./Modal";
-import { CartContext } from "../Context/CartContext";
-import CartProduct from "./Cart/CartProduct";
-import { UserContext } from "../Context/UserContext";
-import Sidebar from "./Home/Sidebar";
+import Modal from "./ui/Modal";
+import { CartContext } from "../context/CartContext";
+import CartProduct from "../pages/Cart/CartProduct";
+import { UserContext } from "../context/UserContext";
+import Sidebar from "../pages/Home/Sidebar";
 
 
 

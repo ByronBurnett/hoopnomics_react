@@ -1,29 +1,29 @@
 import React from 'react'
 import Nav from './components/Nav';
-import Home from './components/Home/Home';
-import Contact from './components/Home/Contact';
+import Home from '../src/pages/Home/Home';
+import Contact from '../src/pages/Home/Contact';
 import Footer from './components/Home/Footer';
-import Highlights from './components/Highlights';
+import Highlights from '../src/pages/Highlights';
 import Section from './components/Home/Section';
-import Teams from './components/Teams/team';
-import Podcast from './components/Podcast';
-import TestPlayer from './components/Teams/TestPlayer';
+import Teams from '../src/pages/Teams/team';
+import Podcast from '../src/pages/Podcast';
+import TestPlayer from '../src/pages/Teams/TestPlayer';
 import PlayerStats from './components/Teams/PlayerStats';
-import SinglePlayer from './components/Teams/SinglePlayer';
-import Games from './components/Games/Games';
-import Store from './pages/Store';
+import SinglePlayer from '../src/pages/Teams/SinglePlayer';
+import Games from '../src/pages/Games/Games';
+import Store from './pages/Cart/Store';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import GameStats from './components/Games/GameStats';
-import Cancel from './pages/Cancel';
-import Success from './pages/Success';
-import CartProvider from './Context/CartContext';
-import AllPlayers from './components/Stats Compare/AllPlayers';
+import GameStats from '../src/pages/Games/GameStats';
+import Cancel from './pages/Cart/Cancel';
+import Success from './pages/Cart/Success';
+import CartProvider from './context/CartContext';
+import AllPlayers from '../src/pages/Stats Compare/AllPlayers';
 import Blogpage from './components/Blog/Blogpage';
 import Create from './components/Blog/Create';
 import PostPage from './components/Blog/PostPage';
-import LoginPage from './components/LoginPage'
-import RegisterPage from './components/RegisterPage';
-import { UserContextProvider } from './Context/UserContext';
+import LoginPage from '../src/pages/LoginPage'
+import RegisterPage from '../src/pages/RegisterPage';
+import { UserContextProvider } from './context/UserContext';
 
 
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { productsArray } from "../components/Cart/productsStore";   
-import ProductCard from "../components/Cart/ProductCard";
+import { productsArray } from "./productsStore";   
+import ProductCard from "./ProductCard";
 
 const Store = () => {
 
