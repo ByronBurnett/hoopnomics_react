@@ -93,7 +93,12 @@ app2.use('/uploads', express.static(__dirname + '/uploads'));
 app2.use(cookieParser());
 
 //connect to db
-mongoose.connect('mongodb+srv://byronburnett:1234@basketballblog.1olbpzh.mongodb.net/test')
+mongoose.connect(process.env.MONG_URI)
+.then(() => {
+    app2.listen(process.env.PORT2, ()  => console.log("connected to db & listening on port", process.env.PORT2))
+}).catch((error) => {
+    console.log(error)
+})
 
 
 app2.post('/register', async (req, res)   => {
@@ -196,6 +201,6 @@ app2.get('/post/:id', async (req , res)  => {
 })
 
 
-app2.listen(process.env.PORT2, ()  => console.log("Listening on port 4001!"))
+
 
 
