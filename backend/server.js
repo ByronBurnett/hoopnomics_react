@@ -121,8 +121,6 @@ app2.post('/register', async (req, res)   => {
 })
 
 
-
-
 app2.post('/login', async (req, res) => {
     const {username, password} = req.body;
     const userDoc = await User.findOne({username});
