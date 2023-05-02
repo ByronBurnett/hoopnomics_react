@@ -90,7 +90,7 @@ const [buttonPopup, setButtonPopup] = useState(false);
             <img src={image} alt="logo"  />
            </h1>
             
-            <Link onClick={logout}>Logout</Link>
+            <a onClick={logout} >Logout</a>
 
           
             </> )}

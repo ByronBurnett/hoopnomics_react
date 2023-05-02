@@ -1,13 +1,3 @@
-//sk_test_51MBaXrHkxKmcowOH13OOVu2edNx7T3U7XIEdHKtNR7oVZnsPOZ2yhJeXIhrKDgdIp8E8zA0s0vyUnYsBfP959ApG00ZMXpqeS9
-
-//Blue Hoodie: price_1MBadjHkxKmcowOHQpOxsNop
-
-// Grey Beanie: price_1MBb0rHkxKmcowOHO5fnLTdw
-
-//Truck Hat: price_1MBb6FHkxKmcowOH9yrDp5pY
-
-
-
 var express = require('express');
 var cors = require('cors');
 const fs = require('fs');
@@ -34,22 +24,7 @@ app.use(express.json());
 //Route to Checkout
 
 app.post("/checkout", async (req, res) => {
-    /*
-    req.body.items
-    [
-        {
-            id: 1,
-            quantity: 3
-        }
-    ]
-    stripe wants
-    [
-        {
-            price: 1,
-            quantity: 3
-        }
-    ]
-    */
+    
     console.log(req.body);
     const items = req.body.items;
     let lineItems = [];
@@ -114,9 +89,7 @@ app2.post('/register', async (req, res)   => {
     } catch(e) {
        res.status(400).json(e)
     }
-    
-    
-    
+     
 
 })
 
@@ -141,9 +114,6 @@ app2.post('/login', async (req, res) => {
         res.status(400).json('wrong credentials');
     }
   });
-
-
-
 
 
 app2.post('/post', upload.single('file'), async (req,res) => {
