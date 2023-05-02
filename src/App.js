@@ -16,7 +16,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import GameStats from '../src/pages/Games/GameStats';
 import Cancel from './pages/Cart/Cancel';
 import Success from './pages/Cart/Success';
-import CartProvider from './context/CartContext';
+import CartProvider from  './context/CartContext'
 import AllPlayers from '../src/pages/Stats Compare/AllPlayers';
 import Blogpage from '../src/pages/Blog/Blogpage';
 import Create from '../src/pages/Blog/Create';
