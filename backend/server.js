@@ -19,6 +19,7 @@ const User = require('./models/User')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+require('dotenv').config()
 
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
@@ -73,7 +74,7 @@ app.post("/checkout", async (req, res) => {
     }));
 });
 
-app.listen(4000, () => console.log("Listening on port 4000!"));
+app.listen(process.env.PORT, () => console.log("Listening on port 4000!"));
 
 
 //Blog Server
@@ -195,6 +196,6 @@ app2.get('/post/:id', async (req , res)  => {
 })
 
 
-app2.listen(4001, ()  => console.log("Listening on port 4001!"))
+app2.listen(process.env.PORT2, ()  => console.log("Listening on port 4001!"))
 
 
