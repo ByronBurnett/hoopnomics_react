@@ -4,7 +4,6 @@ import {  React, useEffect, useState} from "react";
 import PostDetails from   './PostDetails'
 
 
-
 const Blogpage = (props) => {
    
    
