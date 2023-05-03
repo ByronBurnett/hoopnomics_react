@@ -1,7 +1,7 @@
 var express = require('express');
 var cors = require('cors');
 const fs = require('fs');
-const stripe = require('stripe')('sk_test_51MBaXrHkxKmcowOH13OOVu2edNx7T3U7XIEdHKtNR7oVZnsPOZ2yhJeXIhrKDgdIp8E8zA0s0vyUnYsBfP959ApG00ZMXpqeS9');
+const stripe = require('stripe')(process.env.STRIPE_CODE);
 const multer = require('multer')
 const upload = multer({dest: 'uploads/'})
 const Post = require('./models/Post');
