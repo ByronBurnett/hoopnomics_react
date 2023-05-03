@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config()
 
 const salt = bcrypt.genSaltSync(10);
-const secret = 'asdfe45we45w345wegw345werjktjwertkj';
+const secret = process.env.SECRET;
 
 
 let app = express();

@@ -31,12 +31,12 @@ const Sidebar = () => {
     ) :
 
     (
-
-        <button className="text-xl text-white fixed top-4 left-5 z-20"
+         
+        <button className="text-xl text-white fixed top-4 left-80 z-20"
         onClick={() => setIsOpen(!isOpen)}>
             X
         </button>
-
+        
 
    
      )
