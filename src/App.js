@@ -24,6 +24,7 @@ import PostPage from '../src/pages/Blog/PostPage';
 import LoginPage from '../src/pages/LoginPage'
 import RegisterPage from '../src/pages/RegisterPage';
 import { UserContextProvider } from './context/UserContext';
+import EditPost from '../src/pages/Blog/EditPost';
 
 
 
@@ -113,6 +114,10 @@ import { UserContextProvider } from './context/UserContext';
 
      <Route path="/register">
       <RegisterPage  />
+     </Route>
+
+     <Route path="/edit/:id">
+      <EditPost  />
      </Route>
 
 

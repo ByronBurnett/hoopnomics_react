@@ -31,7 +31,7 @@ const Team = () => {
   
 
   return (
-    <div className="max-w-6-xl mx-auto text-center p-2 m-5 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">
+    <div className="max-w-6-xl mx-auto text-center p-2 m-5 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mt-40">
       {teams.map((team , index)  => (
     <Link   style={{color: 'black'}} to={{ 
       pathname: "/roster/" + team.abbreviation,

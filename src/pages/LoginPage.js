@@ -37,7 +37,7 @@ const LoginPage = () => {
       }
     return ( 
 
-    <form className="login max-w-lg mx-auto p-10 m-20" onSubmit={login}>
+    <form className="login max-w-lg mx-auto p-10 m-40" onSubmit={login}>
          <h1 className="text-2xl font-bold text-center m-5">Login</h1>
         <input type="text" 
         placeholder="username" 

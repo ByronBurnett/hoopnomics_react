@@ -16,7 +16,7 @@ const ProductCard = (props) => { // props.product is the product we are selling
     return ( 
         
         
-        <article className=" rounded bg-white shadow-lg m-5 w-full p-3 ">
+        <article className=" rounded bg-white shadow-lg w-full p-3 m-20 ">
            <img src={product.image} alt="" />
           <article>
              <h3 className="font-extrabold p-2 text-center">{product.title}</h3>

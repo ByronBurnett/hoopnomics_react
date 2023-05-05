@@ -11,7 +11,7 @@ const Footer = () => {
 
 
 <footer className="relative max-w-full h-auto p-2
- bg-primary">
+ bg-primary ">
 
 <div className="w-full grid lg:grid-cols-[_2fr_1fr_1fr_1fr] md:grid-cols-2 sm-grid-cols-1 gap-5  ">
 
@@ -73,7 +73,7 @@ const Footer = () => {
 </footer>
 
 <div className="text-white bg-primary mx-auto">
-  <p className="text-center pb-2">Copyright &copy; 2022 Hoopnomics all Rights Reserved</p>
+  <p className="text-center pb-2">Copyright &copy; 2023 Hoopnomics all Rights Reserved</p>
 </div>
 
 

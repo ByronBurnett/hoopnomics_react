@@ -1,38 +1,35 @@
 import {  React, useEffect, useState} from "react";
+import PostDetails from '../Blog/PostDetails'
 
 
-import PostDetails from   './PostDetails'
-
-
-const Blogpage = (props) => {
+const Blogpage = () => {
    
    
 
-    const [posts, setPosts] = useState(null);
+    const [posts, setPosts] = useState([]);
      
-  useEffect(() => {
-   const fetchBlogs = async () => {
-    const response = await fetch('http://localhost:4001/post')
-    
-    const json = await response.json()
-    if (response.ok) {
-      setPosts(json)
-    }
-   }
-   fetchBlogs()
-  }, [])
-  
+  useEffect(()  => {
+   fetch('http://localhost:4001/post')
+   .then(response => {
+    response.json().then(posts => {
+      setPosts(posts)
+    });
+
+   });
+
+
+ }, [])
   
   
   return ( 
       
      <>
-      <h2 className="m-2 text-2xl text-center font-extrabold">Hoopnomics Blog</h2>
-      {posts && posts.map((post) => (
-      
-     <PostDetails  key={post._id} post={post}/>
-
-      ))}
+     <div className="m-40"> 
+      <h2 className=" text-2xl text-center font-extrabold ">Hoopnomics Blog</h2>
+       {posts.length > 0 && posts.map(post => (
+        <PostDetails {...post} />
+       ))}
+          </div>
      </>
 
      );

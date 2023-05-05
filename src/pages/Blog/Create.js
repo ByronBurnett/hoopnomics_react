@@ -55,7 +55,7 @@ const Create = () => {
     return ( 
      
         <form onSubmit={createNewPost}
-        className="max-w-2xl m-10 mx-auto"
+        className="max-w-2xl m-40 mx-auto "
         >
         <input type="title"
                placeholder={'Title'}

@@ -49,7 +49,7 @@ const TestPlayer = props => {
     
     return ( 
 
-        <div>  
+        <div className="mt-40">  
 
         <div> 
         <h2 className="font-extrabold text-center text-xl">Team: {teamName} </h2>

@@ -16,8 +16,6 @@ import Sidebar from "../pages/Home/Sidebar";
 const Nav = () => {
 const {setUserInfo, userInfo} = useContext(UserContext);
 
-
-
  
    useEffect(() => {
       fetch('http://localhost:4001/profile',  {
@@ -30,6 +28,9 @@ const {setUserInfo, userInfo} = useContext(UserContext);
       })
    
      }, [])
+
+
+     
  
  
 const cart = useContext(CartContext)
@@ -72,17 +73,19 @@ const [buttonPopup, setButtonPopup] = useState(false);
 
     return (  
    <>  
-        <header className="bg-primary p-2.5"> 
-            <nav >
+        <header className= " fixed top-0 w-full bg-primary p-2.5"> 
+            <nav className="">
            
-            
+              
+       
+          
              
          {username && (
             <>
            
-            <h1>
-              {}
-            </h1>
+           <h1>
+           {}
+           </h1>
             
             <Link to="/create">Create new post</Link>
 
@@ -90,7 +93,7 @@ const [buttonPopup, setButtonPopup] = useState(false);
             <img src={image} alt="logo"  />
            </h1>
             
-            <a onClick={logout} >Logout</a>
+            <a onClick={logout} >Logout ({username})</a>
 
           
             </> )}
@@ -120,21 +123,19 @@ const [buttonPopup, setButtonPopup] = useState(false);
          <span className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-red-700 text-white items-center rounded-full">{productsCount}</span>
       </button>
            
-     
-     
+      
 </nav>
 
 </header>
          
-   
-<Sidebar />
 
+<Sidebar />  
 
 
 
    <Modal trigger={buttonPopup} setTrigger={setButtonPopup}>
       
-     <h1 className="flex justify-center font-bold p-3 text-xl border-b border-gray-500">
+     <h1 className="flex justify-center font-bold p-3 text-xl border-b border-gray-500 ">
         Shopping Cart
      </h1>
      <div>

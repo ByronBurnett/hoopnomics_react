@@ -95,7 +95,7 @@ const Games = () => {
     
     
     
-    <div className="all-games">
+    <div className="all-games mt-40">
       {/* <span className="game-visitor_team">
         visit()
         <span>{game.visitor_team.abbreviation}</span>
