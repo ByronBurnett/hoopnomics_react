@@ -23,8 +23,8 @@ app.use(express.static("public"));
 app.use(express.json());
 
 
-const port = process.env.PORT || 3000
-const port2 = process.env.PORT || 3001
+const port = process.env.PORT || 4000
+const port2 = process.env.PORT || 4001
 
 
 //Route to Checkout
@@ -55,7 +55,7 @@ app.post("/checkout", async (req, res) => {
     }));
 });
 
-app.listen(port, () => console.log(`Listening on port!${port}`, ));
+app.listen(port, () => console.log(`Listening on port ${port}!`, ));
 
 
 //Blog Server
@@ -76,7 +76,7 @@ app2.use(cookieParser());
 //connect to db
 mongoose.connect(process.env.MONG_URI)
 .then(() => {
-    app2.listen(port2, ()  => console.log(`connected to db & listening on port${port2}!` ))
+    app2.listen(port2, ()  => console.log(`connected to db & listening on port ${port2}!` ))
 }).catch((error) => {
     console.log(error)
 })
