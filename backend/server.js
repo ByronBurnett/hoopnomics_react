@@ -15,8 +15,8 @@ const cookieParser = require('cookie-parser');
 
 const salt = bcrypt.genSaltSync(10);
 
-const port = process.env.PORT || 4000;
-const port2 = process.env.PORT || 4001;
+const port = process.env.PORT || 3000;
+const port2 = process.env.PORT || 3001;
 
 let app = express();
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
