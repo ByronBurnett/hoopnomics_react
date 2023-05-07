@@ -23,7 +23,7 @@ app.use(express.static("public"));
 app.use(express.json());
 
 
-const port = process.env.PORT || 4000;
+//const port = process.env.PORT || 4000;
 const port2 = process.env.PORT || 4001;    
 
 
@@ -55,7 +55,7 @@ app.post("/checkout", async (req, res) => {
     }));
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}!` ));
+//app.listen(port, () => console.log(`Listening on port ${port}!` ));
 
 
 //Blog Server
