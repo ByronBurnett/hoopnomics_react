@@ -18,7 +18,7 @@ const salt = bcrypt.genSaltSync(10);
 
 
 let app = express();
-app.use(cors({credentials:true,origin:'http://hoopnomics.com'}));
+app.use(cors({credentials:true,origin:'https://hoopnomics.com'}));
 app.use(express.static("public"));
 app.use(express.json());
 
