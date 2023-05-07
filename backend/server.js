@@ -18,7 +18,7 @@ const salt = bcrypt.genSaltSync(10);
 
 
 let app = express();
-app.use(cors({credentials:true,origin:'https://hoopnomics.com'}));
+app.use(cors({credentials:true,origin:'http://localhost:3000'}));
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -61,7 +61,7 @@ const mongoose = require('mongoose')
 
 //Middleware
 app2.use(express.json())
-app2.use(cors({credentials:true,origin:'https://hoopnomics.com'}));         
+app2.use(cors({credentials:true,origin:'http://localhost:3000'}));         
 app2.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
