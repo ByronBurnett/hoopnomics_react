@@ -24,7 +24,7 @@ app.use(express.json());
 
 
 const port = process.env.PORT || 3000;
-const port2 = process.env.PORT || 3001;
+const port2 = process.env.PORT || 3001;    
 
 
 //Route to Checkout
