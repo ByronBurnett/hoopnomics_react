@@ -74,26 +74,22 @@ const [buttonPopup, setButtonPopup] = useState(false);
     return (  
    <>  
         <header className= " fixed top-0 w-full bg-primary p-2.5"> 
-            <nav className="">
+            <nav>
            
-              
-       
-          
-             
          {username && (
             <>
-           
-           <h1>
-           {}
-           </h1>
-            
-            <Link to="/create">Create new post</Link>
 
             <h1 > 
             <img src={image} alt="logo"  />
            </h1>
+           
+         
+            <Link className="text-white" to ="/">Home</Link>  
+            <Link to="/create">Create new post</Link >       
+            <Link className=" text-white" to ="/register">Register</Link>
+            <Link className="text-white" to ="/login">Login</Link>
             
-            <a onClick={logout} >Logout ({username})</a>
+            <a onClick={logout} href="/" >Logout ({username})</a>
 
           
             </> )}
@@ -102,25 +98,22 @@ const [buttonPopup, setButtonPopup] = useState(false);
               
               
               <>
-
-              <h1>{}</h1>
-               
-      <Link className="text-white" to ="/register">Register</Link>
-        
+      
              <h1 > 
             <img src={image} alt="logo"  />
             </h1>
-        
-        <Link className="text-white" to ="/login">Login</Link>
-        
-               
+            
+            <Link className="text-white" to ="/">Home</Link>          
+            <Link className=" text-white" to ="/register">Register</Link>
+            <Link className="text-white" to ="/login">Login</Link>
+            
                </>
             )}
        
 
      
         <button onClick={() => setButtonPopup(true)} className="relative w-20 h-7 justify-self-center col-start-5 bg-indigo-600 border-2 border-stone-50"><i className="fa-solid badge fa-cart-shopping text-white "></i>
-         <span className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-red-700 text-white items-center rounded-full">{productsCount}</span>
+        <span className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-red-700 text-white items-center rounded-full">{productsCount}</span>
       </button>
            
       
