@@ -18,7 +18,7 @@ const {setUserInfo, userInfo} = useContext(UserContext);
 
  
    useEffect(() => {
-      fetch('https://hoopnomics.com/profile',  {
+      fetch('http://localhost:4001/profile',  {
        credentials: 'include',
    
       }).then(response => {
@@ -55,7 +55,7 @@ const [buttonPopup, setButtonPopup] = useState(false);
 
   
   const logout = () => {
-    fetch('https://hoopnomics.com/logout', {
+    fetch('http://localhost:4001/logout', {
       credentials: 'include',
       method: 'POST',
     })
