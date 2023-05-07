@@ -15,7 +15,8 @@ const cookieParser = require('cookie-parser');
 
 const salt = bcrypt.genSaltSync(10);
 
-
+const port = process.env.PORT || 4000;
+const port2 = process.env.PORT || 4001;
 
 let app = express();
 app.use(cors({credentials:true,origin:'http://localhost:3000'}));
@@ -51,7 +52,7 @@ app.post("/checkout", async (req, res) => {
     }));
 });
 
-app.listen(process.env.PORT, () => console.log("Listening on port 4000!"));
+app.listen(port, () => console.log(`Listening on port ${port}!`));
 
 
 //Blog Server
@@ -72,7 +73,7 @@ app2.use(cookieParser());
 //connect to db
 mongoose.connect(process.env.MONG_URI)
 .then(() => {
-    app2.listen(process.env.PORT2, ()  => console.log("connected to db & listening on port", process.env.PORT2 ))
+    app2.listen(port2, ()  => console.log(`connected to db & listening on port! ${port}` ))
 }).catch((error) => {
     console.log(error)
 })
