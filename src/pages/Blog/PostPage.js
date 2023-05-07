@@ -17,7 +17,7 @@ const PostPage = () => {
         
         console.log(id);
       
-         fetch(`https://mern-crud-ued0.onrender.com/post/${id}`)
+         fetch(`http://localhost:4001/post/${id}`)
          .then(response => {
             response.json().then(postInfo => {
               setPostInfo(postInfo)
@@ -52,7 +52,7 @@ const PostPage = () => {
   </Link>
 </div>
      )}
-     <img src={`https://mern-crud-ued0.onrender.com/${postInfo.cover}`} alt="" className="object-contain m-5"  />
+     <img src={`http://localhost:4001/${postInfo.cover}`} alt="" className="object-contain m-5"  />
     
        <div          
         dangerouslySetInnerHTML={{__html: postInfo.content}}
