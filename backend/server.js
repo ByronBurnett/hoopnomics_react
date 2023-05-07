@@ -18,7 +18,7 @@ const salt = bcrypt.genSaltSync(10);
 
 
 let app = express();
-app.use(cors({credentials:true,origin:'http://localhost:3000'}));
+app.use(cors({credentials:true,origin:'http://hoopnomics.com'}));
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -72,7 +72,7 @@ app2.use(cookieParser());
 //connect to db
 mongoose.connect(process.env.MONG_URI)
 .then(() => {
-    app2.listen(process.env.PORT2, ()  => console.log("connected to db & listening on port", process.env.PORT2))
+    app2.listen(process.env.PORT2, ()  => console.log("connected to db & listening on port", process.env.PORT2 ))
 }).catch((error) => {
     console.log(error)
 })
