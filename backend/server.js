@@ -23,8 +23,8 @@ app.use(express.static("public"));
 app.use(express.json());
 
 
-const port = process.env.PORT || 3000;
-const port2 = process.env.PORT || 3001;    
+const port = process.env.PORT || 4000;
+const port2 = process.env.PORT || 4001;    
 
 
 //Route to Checkout
