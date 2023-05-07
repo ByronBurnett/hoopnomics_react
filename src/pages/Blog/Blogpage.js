@@ -9,7 +9,7 @@ const Blogpage = () => {
     const [posts, setPosts] = useState([]);
      
   useEffect(()  => {
-   fetch('http://localhost:4001/post')
+   fetch('https://mern-crud-ued0.onrender.com/post')
    .then(response => {
     response.json().then(posts => {
       setPosts(posts)
