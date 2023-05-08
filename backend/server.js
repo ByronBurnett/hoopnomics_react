@@ -117,6 +117,23 @@ app2.post('/login', async (req, res) => {
     }
   });
 
+  app2.get('/profile', (req, res) => {
+    const {token} = req.cookies;
+      jwt.verify(token, process.env.SECRET_1, {}, (err, info) => {
+       if (err) throw err;
+        res.json(info);
+      });
+     
+     });
+
+     
+     app2.post('/logout' , (req, res) => {
+      res.cookie('token', '').json('ok')
+    });
+  
+
+
+
 
 app2.post('/post', upload.single('file'), async (req,res) => {
     const {originalname,path} = req.file;
@@ -176,20 +193,6 @@ app2.put('/post', upload.single('file'), async (req,res) => {
     
     
     
-
-app2.get('/profile', (req, res) => {
- const {token} = req.cookies;
-   jwt.verify(token, process.env.SECRET_1, {}, (err, info) => {
-    if (err) throw err;
-     res.json(info);
-   });
-  console.log(token)
-  });
-
-  app2.post('/logout' , (req, res) => {
-    res.cookie('token', '').json('ok')
-  });
-
 
   app2.get('/post', async (req, res) => {
    res.json(await Post.find()
