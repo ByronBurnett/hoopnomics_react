@@ -63,7 +63,7 @@ app.post("/checkout", async (req, res) => {
 //Blog Server
 
 const app2 = express();
-app2.use(cors({credentials:true,origin:'https://hoopnomics.com'}));  
+app2.use(cors({credentials:true,origin:'.hoopnomics.com'}));  
 const mongoose = require('mongoose')     
 
 //Middleware
