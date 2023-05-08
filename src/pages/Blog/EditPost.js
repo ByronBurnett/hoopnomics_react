@@ -54,7 +54,7 @@ const EditPost = () => {
         data.set('file', files?.[0]);
       }
      
-     const response = await fetch('http://localhost:4001/post' , {
+     const response = await fetch('https://mern-crud-ued0.onrender.com/post' , {
         method: 'PUT',
         body: data,
         credentials: 'include',
