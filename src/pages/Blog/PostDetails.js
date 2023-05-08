@@ -14,7 +14,7 @@ export default function PostDetails({_id, title, summary, cover, content, create
         <div className="grid grid-cols-2 gap-5 mb-7">
         <div className="">
         <Link to={`/post/${_id}`}> 
-        <img src={'https://hoopnomics.com/' +cover} alt=""/>
+        <img src={'http://localhost:4001/' +cover} alt=""/>
         </Link>
         </div>
         <div className="m-0 text-3xl p-2">

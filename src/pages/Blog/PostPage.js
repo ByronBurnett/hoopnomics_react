@@ -52,7 +52,7 @@ const PostPage = () => {
   </Link>
 </div>
      )}
-     <img src={`https://hoopnomics.com/${postInfo.cover}`} alt="" className="object-contain m-5"  />
+     <img src={`http://localhost:4001/${postInfo.cover}`} alt="" className="object-contain m-5"  />
     
        <div          
         dangerouslySetInnerHTML={{__html: postInfo.content}}
