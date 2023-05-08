@@ -109,13 +109,18 @@ app2.post('/login', async (req, res) => {
         res.cookie('token', token).json({
           id:userDoc._id,
           username,
+          
         });
+        console.log(token) 
      }) 
      // res.json();
     } else {
         res.status(400).json('wrong credentials');
     }
+
+   
   });
+
 
   app2.get('/profile', (req, res) => {
     const {token} = req.cookies;
