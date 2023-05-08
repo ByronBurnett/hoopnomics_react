@@ -108,7 +108,7 @@ app2.post('/login', async (req, res) => {
     
     if (passOk) {
      // logged in
-     jwt.sign({username,id:userDoc._id}, process.env.SECRET, {}, (err,token) => {
+     jwt.sign({username,id:userDoc._id}, process.env.SECRET_1, {}, (err,token) => {
         if (err) throw err;
         res.cookie('token', token).json({
           id:userDoc._id,
@@ -131,7 +131,7 @@ app2.post('/post', upload.single('file'), async (req,res) => {
   
    
     const {token} = req.cookies;
-    jwt.verify(token, process.env.SECRET, {}, async (err,info) => {
+    jwt.verify(token, process.env.SECRET_1, {}, async (err,info) => {
     if (err) throw err;
     const {title,summary,content} = req.body;
     const postDoc = await Post.create({
@@ -158,7 +158,7 @@ app2.put('/post', upload.single('file'), async (req,res) => {
     }
   
     const {token} = req.cookies;
-    jwt.verify(token, process.env.SECRET, {}, async (err,info) => {
+    jwt.verify(token, process.env.SECRET_1, {}, async (err,info) => {
       if (err) throw err;
       const {id,title,summary,content} = req.body;
       const postDoc = await Post.findById(id);
@@ -183,7 +183,7 @@ app2.put('/post', upload.single('file'), async (req,res) => {
 
 app2.get('/profile', (req, res) => {
  const {token} = req.cookies;
-   jwt.verify(token, process.env.SECRET, {}, (err, info) => {
+   jwt.verify(token, process.env.SECRET_1, {}, (err, info) => {
     if (err) throw err;
      res.json(info);
    });
