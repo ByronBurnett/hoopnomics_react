@@ -29,6 +29,15 @@ const {setUserInfo, userInfo} = useContext(UserContext);
    
      }, [])
 
+     const logout = () => {
+      fetch('https://mern-crud-ued0.onrender.com/logout', {
+        credentials: 'include',
+        method: 'POST',
+      })
+      setUserInfo(null);
+    }
+  
+
 
      
  
@@ -54,13 +63,6 @@ const [buttonPopup, setButtonPopup] = useState(false);
   }
 
   
-  const logout = () => {
-    fetch('https://mern-crud-ued0.onrender.com/logout', {
-      credentials: 'include',
-      method: 'POST',
-    })
-    setUserInfo(null);
-  }
 
 
 
