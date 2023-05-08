@@ -66,7 +66,7 @@ const app2 = express();
 
 app2.use(cors({
   credentials:true,
-  origin:'https://mern-crud-ued0.onrender.com/'}));  
+  origin:'https://hoopnomics.com'}));  
 
 
   const mongoose = require('mongoose')     
