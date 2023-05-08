@@ -18,7 +18,7 @@ const {setUserInfo, userInfo} = useContext(UserContext);
 
  
    useEffect(() => {
-      fetch('https://mern-crud-ued0.onrender.com/profile',  {
+      fetch('https://hoopnomics.com/profile',  {
        credentials: 'include',
    
       }).then(response => {
