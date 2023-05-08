@@ -33,7 +33,7 @@ const EditPost = () => {
     const [redirect, setRedirect] = useState(false);
     
     useEffect(() => {
-        fetch('http://localhost:4001/post/' +id)
+        fetch('https://mern-crud-ued0.onrender.com/post/' +id)
         .then(response => {
             response.json().then(postInfo => {
              setTitle(postInfo.title);
