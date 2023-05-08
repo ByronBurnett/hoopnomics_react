@@ -132,7 +132,7 @@ app2.post('/login', async (req, res) => {
 
   app2.get('/profile', (req, res) => {
     const {token} = req.cookies;
-     console.log(token)
+     console.log({token})
        jwt.verify(token, process.env.SECRET_1, {}, (err, info) => {
        if (err) throw err;
         res.json(info);
