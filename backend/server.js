@@ -76,15 +76,7 @@ app2.use(express.json())
        
 app2.use('/uploads', express.static(__dirname + '/uploads'));
 app2.use(cookieParser());
-app2.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept, Authorization, my-custom-header',
-  );
-  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, PATCH');
-  next();
-});
+
 
 //connect to db
 mongoose.connect(process.env.MONG_URI)
