@@ -13,6 +13,8 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
 
+
+
 const salt = bcrypt.genSaltSync(10);
 
 
@@ -61,11 +63,12 @@ app.post("/checkout", async (req, res) => {
 //Blog Server
 
 const app2 = express();
+app2.use(cors({credentials:true,origin:'https://hoopnomics.com'}));  
 const mongoose = require('mongoose')     
 
 //Middleware
 app2.use(express.json())
-app2.use(cors({credentials:true,origin:'https://hoopnomics.com'}));         
+       
 app2.use('/uploads', express.static(__dirname + '/uploads'));
 app2.use(cookieParser());
 
