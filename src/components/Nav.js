@@ -18,7 +18,7 @@ const {setUserInfo, userInfo} = useContext(UserContext);
 
  
    useEffect(() => {
-      fetch('http://localhost:4001/profile',  {
+      fetch('https://mern-crud-ued0.onrender.com/profile',  {
        credentials: 'include',
    
       }).then(response => {
@@ -55,7 +55,7 @@ const [buttonPopup, setButtonPopup] = useState(false);
 
   
   const logout = () => {
-    fetch('http://localhost:4001/logout', {
+    fetch('https://mern-crud-ued0.onrender.com/logout', {
       credentials: 'include',
       method: 'POST',
     })
