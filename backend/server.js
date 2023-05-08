@@ -65,7 +65,7 @@ const mongoose = require('mongoose')
 
 //Middleware
 app2.use(express.json())
-app2.use(cors({credentials:true,origin:'https://hoopnomics.com'}));         
+app2.use(cors({credentials:true,origin:'https://hoopnomics.netlify.app'}));         
 app2.use('/uploads', express.static(__dirname + '/uploads'));
 app2.use(cookieParser());
 
