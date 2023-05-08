@@ -14,7 +14,9 @@ import Sidebar from "../pages/Home/Sidebar";
 
 
 const Nav = () => {
-const {setUserInfo, userInfo} = useContext(UserContext);
+
+
+   const {setUserInfo, userInfo} = useContext(UserContext);
 
  
    useEffect(() => {
@@ -25,7 +27,7 @@ const {setUserInfo, userInfo} = useContext(UserContext);
          response.json().then(userInfo => {
        setUserInfo(userInfo);
          });
-      })
+      });
    
      }, []);
 

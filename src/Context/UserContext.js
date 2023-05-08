@@ -1,10 +1,10 @@
 import { React } from "react";
-import { useState } from "react";
+import { useState, createContext } from "react";
 
 
-const { createContext } = require("react");
 
-export const UserContext = createContext({})
+
+export const UserContext = createContext({});
 
 
 export function UserContextProvider({children}) {
