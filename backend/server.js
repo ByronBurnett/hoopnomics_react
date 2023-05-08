@@ -93,6 +93,7 @@ app2.post('/register', async (req, res)   => {
         })
         res.json(userDoc);
     } catch(e) {
+      console.log(e);
        res.status(400).json(e);
     }
      
@@ -186,7 +187,7 @@ app2.get('/profile', (req, res) => {
     if (err) throw err;
      res.json(info);
    });
-  
+  console.log(token)
   });
 
   app2.post('/logout' , (req, res) => {
