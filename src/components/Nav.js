@@ -27,7 +27,7 @@ const {setUserInfo, userInfo} = useContext(UserContext);
          });
       })
    
-     }, [])
+     }, []);
 
      const logout = () => {
       fetch('https://mern-crud-ued0.onrender.com/logout', {
