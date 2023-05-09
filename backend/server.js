@@ -66,7 +66,9 @@ const app2 = express();
 
 app2.use(cors({
   credentials: true,
-  origin:'https://hoopnomics.com'}));  
+  origin:'https://hoopnomics.com',
+  exposedHeaders: ["set-cookie"]
+}));  
 
 
   const mongoose = require('mongoose')     
