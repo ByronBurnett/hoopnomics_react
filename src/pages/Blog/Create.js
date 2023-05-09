@@ -30,6 +30,7 @@ const Create = () => {
     const [content,setContent] = useState('');
     const [files, setFiles] = useState('');
     const [redirect, setRedirect] = useState(false);
+    
     async function createNewPost(ev) {
       const data = new FormData();
       data.set('title', title);
