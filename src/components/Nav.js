@@ -2,11 +2,11 @@ import React from "react";
 import image from ".././assets/img/White logo - no background.png";
 import { Link} from 'react-router-dom';
 import { Fragment } from "react";
-import { useState, useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import Modal from "./ui/Modal";
 import { CartContext } from "../context/CartContext";
 import CartProduct from "../pages/Cart/CartProduct";
-import { UserContext } from "../context/UserContext";
+
 import Sidebar from "../pages/Home/Sidebar";
 
 
@@ -16,32 +16,7 @@ import Sidebar from "../pages/Home/Sidebar";
 const Nav = () => {
 
 
-   const {userInfo, setUserInfo} = useContext(UserContext);
-
- 
-   useEffect(() => {
-      fetch('https://mern-crud-ued0.onrender.com/profile',  {
-       credentials: 'include',
-       method: 'GET',
-       headers: {'Content-Type': 'application/json'
-      },
    
-      }).then(response => {
-         response.json().then(userInfo => {
-       setUserInfo(userInfo);
-         });
-      });
-   
-     }, []);
-
-     const logout = () => {
-      fetch('https://mern-crud-ued0.onrender.com/logout', {
-        credentials: 'include',
-        method: 'POST',
-      })
-      setUserInfo(null);
-    }
-  
 
 
      
@@ -71,7 +46,7 @@ const [buttonPopup, setButtonPopup] = useState(false);
 
 
 
-  const username = userInfo?.username;
+  
 
   
        
@@ -83,27 +58,8 @@ const [buttonPopup, setButtonPopup] = useState(false);
         <header className= " fixed top-0 w-full bg-primary p-2.5"> 
             <nav>
            
-         {username && (
-            <>
-
-            <h1 > 
-            <img src={image} alt="logo"  />
-           </h1>
-           
+        
          
-            <Link className="text-white" to ="/">Home</Link>  
-            <Link to="/create">Create new post</Link >       
-            <Link className=" text-white" to ="/register">Register</Link>
-            <Link className="text-white" to ="/login">Login</Link>
-            
-            <a onClick={logout} href="/" >Logout ({username})</a>
-
-          
-            </> )}
-
-            {!username && (
-              
-              
               <>
       
              <h1 > 
@@ -115,7 +71,7 @@ const [buttonPopup, setButtonPopup] = useState(false);
             <Link className="text-white" to ="/login">Login</Link>
             
                </>
-            )}
+      
        
 
      
