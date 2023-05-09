@@ -16,7 +16,7 @@ import Sidebar from "../pages/Home/Sidebar";
 const Nav = () => {
 
 
-   const {setUserInfo, userInfo} = useContext(UserContext);
+   const {userInfo, setUserInfo} = useContext(UserContext);
 
  
    useEffect(() => {
