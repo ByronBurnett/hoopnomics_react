@@ -23,7 +23,8 @@ const Nav = () => {
       fetch('https://mern-crud-ued0.onrender.com/profile',  {
        credentials: 'include',
        method: 'GET',
-       headers: 'Content-Type: application/json',
+       headers: {'Content-Type': 'application/json'
+      },
    
       }).then(response => {
          response.json().then(userInfo => {
