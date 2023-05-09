@@ -18,13 +18,7 @@ import Cancel from './pages/Cart/Cancel';
 import Success from './pages/Cart/Success';
 import CartProvider from  './context/CartContext'
 import AllPlayers from '../src/pages/Stats Compare/AllPlayers';
-import Blogpage from '../src/pages/Blog/Blogpage';
-import Create from '../src/pages/Blog/Create';
-import PostPage from '../src/pages/Blog/PostPage';
-import LoginPage from '../src/pages/LoginPage'
-import RegisterPage from '../src/pages/RegisterPage';
-import { UserContextProvider } from './context/UserContext';
-import EditPost from '../src/pages/Blog/EditPost';
+
 
 
 
@@ -35,7 +29,7 @@ import EditPost from '../src/pages/Blog/EditPost';
  return (
  
      <CartProvider> 
-      <UserContextProvider> 
+   
      <Router>  
             
   <div className="App">
@@ -96,29 +90,8 @@ import EditPost from '../src/pages/Blog/EditPost';
        <AllPlayers />  
      </Route>
 
-     <Route path="/blogs">
-       <Blogpage />  
-     </Route>
 
-     <Route path="/create">
-     <Create />
-     </Route>
-
-     <Route path="/post/:id">
-      <PostPage   />
-     </Route>
-
-     <Route path="/login">
-      <LoginPage  />
-     </Route>
-
-     <Route path="/register">
-      <RegisterPage  />
-     </Route>
-
-     <Route path="/edit/:id">
-      <EditPost  />
-     </Route>
+     
 
 
     
@@ -127,7 +100,7 @@ import EditPost from '../src/pages/Blog/EditPost';
    <Footer />
 </div>
   </Router> 
-  </UserContextProvider>
+  
   </CartProvider>
  
    
