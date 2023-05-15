@@ -1,4 +1,4 @@
-import { BlogsContext } from "../context/BlogContext";
+import {BlogsContext} from "../Context/BlogContext";
 import { useContext } from 'react'
 
 export const useBlogsContext = () => {

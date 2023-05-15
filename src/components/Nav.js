@@ -4,7 +4,7 @@ import { Link} from 'react-router-dom';
 import { Fragment } from "react";
 import { useContext, useState } from "react";
 import Modal from "./ui/Modal";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../Context/CartContext"
 import CartProduct from "../pages/Cart/CartProduct";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";

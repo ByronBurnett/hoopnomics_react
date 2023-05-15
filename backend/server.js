@@ -4,13 +4,12 @@
 //Truck Hat: price_1MBb6FHkxKmcowOH9yrDp5pY
 require('dotenv').config()
 let express = require('express');
-var cors = require('cors');
+const cors = require('cors');
 const mongoose = require('mongoose')
 const stripe = require('stripe')('sk_test_51MBaXrHkxKmcowOH13OOVu2edNx7T3U7XIEdHKtNR7oVZnsPOZ2yhJeXIhrKDgdIp8E8zA0s0vyUnYsBfP959ApG00ZMXpqeS9');   
 const app = express();
 app.use(cors());
-app.use(express.static("public"));   
-app.use(express.json());    
+app.use(express.static("public"));    
 
 
 //Route to Checkout  
@@ -80,7 +79,7 @@ mongoose.connect(process.env.MONGO_URI)
 .then(() =>   { 
     app2.listen(4001, () => console.log("Connected to db & Listening on port 4001!"));
 })
-.catch((error) =>{     
+.catch((error) =>{      
     console.log(error)      
 })
 

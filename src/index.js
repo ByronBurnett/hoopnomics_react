@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { UserContextProvider } from './context/UserContext';
-import CartProvider from './context/CartContext';
-import { BlogsContextProvider } from './context/BlogContext';
+import { UserContextProvider } from '../src/Context/UserContext';
+import CartProvider from '../src/Context/CartContext';
+import { BlogsContextProvider } from '../src/Context/BlogContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
