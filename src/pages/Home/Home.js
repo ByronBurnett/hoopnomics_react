@@ -13,7 +13,7 @@ const Home = () => {
 
  
 
-   <div className=" max-w-6xl grid lg:grid-cols-3 auto-rows-[_250px] md:grid-cols-2 sm:grid-cols-1 mx-auto gap-7 p-5 mt-40 "> 
+   <div className=" max-w-6xl grid lg:grid-cols-3 auto-rows-[_250px] md:grid-cols-2 sm:grid-cols-1 mx-auto gap-7 p-5"> 
 
 
 

@@ -42,7 +42,7 @@ const SinglePlayer = (props) => {
     
     return (  
 
-      <div className="grid grid-cols-1 mx-auto text-center max-w-xs mt-40">
+      <div className="grid grid-cols-1 mx-auto text-center max-w-xs m-5">
 
 
 

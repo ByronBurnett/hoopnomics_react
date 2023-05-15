@@ -47,7 +47,7 @@ const Section = () => {
         <p className="font-bold p-2 text-center">Weekly posts about Basketball.</p>
       
         <div className="flex justify-center">
-            <button className="bg-primary text-white p-2 m-4 rounded"> <Link to="/blogs">Click Here</Link></button>
+            <button className="bg-primary text-white p-2 m-4 rounded"> <Link to="/blogpage">Click Here</Link></button>
         </div>
      </article>
   </article> 

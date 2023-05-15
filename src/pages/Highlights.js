@@ -51,7 +51,7 @@ const Highlights = () => {
           
       <div>   
 
-        <div className=" grid lg:grid-cols-3 max-w-7xl gap-3 p-2 md:grid-cols-2 sm:max-sm grid-cols-1 mx-auto m-40 sm:mt-40 ">
+        <div className=" grid lg:grid-cols-3 max-w-7xl gap-3 p-2 md:grid-cols-2 sm:max-sm grid-cols-1 mx-auto ">
 
        {videos.map((item, index)  => (  
              

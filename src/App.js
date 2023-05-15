@@ -12,24 +12,29 @@ import PlayerStats from '../src/pages/Teams/PlayerStats';
 import SinglePlayer from '../src/pages/Teams/SinglePlayer';
 import Games from '../src/pages/Games/Games';
 import Store from './pages/Cart/Store';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import GameStats from '../src/pages/Games/GameStats';
 import Cancel from './pages/Cart/Cancel';
 import Success from './pages/Cart/Success';
-import CartProvider from  './context/CartContext'
 import AllPlayers from '../src/pages/Stats Compare/AllPlayers';
+import Blogpage from '../src/pages/Blog/Blogpage'
+import Create from '../src/pages/Blog/Create'
+import Postpage from './pages/Blog/Postpage';
+import EditPost from './pages/Blog/EditPost';
+import RegisterPage from '../src/pages/RegisterPage';
+import LoginPage from '../src/pages/LoginPage'
+import { useAuthContext } from './hooks/useAuthContext';
 
 
-
-
-
- function App() {
+function App() {
   
-  
+  const { user } = useAuthContext()
+
+
  return (
  
-     <CartProvider> 
-   
+
+     
      <Router>  
             
   <div className="App">
@@ -90,6 +95,34 @@ import AllPlayers from '../src/pages/Stats Compare/AllPlayers';
        <AllPlayers />  
      </Route>
 
+     <Route path="/blogpage">
+      <Blogpage />
+     </Route>
+
+     
+     <Route path="/create">
+      <Create/>
+     </Route>
+
+     
+     <Route path="/postpage/:id">
+      <Postpage />
+     </Route>
+
+      
+     <Route path="/edit/:id">
+      <EditPost />
+     </Route>
+
+       
+     <Route path="/register">
+      <RegisterPage />
+     </Route>
+
+     <Route path="/login">
+       {user ?  <Redirect to="/" /> : <LoginPage/> }  
+     </Route>
+
 
      
 
@@ -100,11 +133,9 @@ import AllPlayers from '../src/pages/Stats Compare/AllPlayers';
    <Footer />
 </div>
   </Router> 
-  
-  </CartProvider>
  
-   
-   
+  
+  
   
 
   );

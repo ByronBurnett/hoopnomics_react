@@ -86,7 +86,7 @@ console.log(visitorPlayers)
   
   return (
     <div className="">
-      <div className="text-center mt-40">
+      <div className="text-center">
         <span className="logos">
           <span className="font-extrabold"> {visitorScore} </span>
           <Link
