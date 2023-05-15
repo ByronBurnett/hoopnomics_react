@@ -87,8 +87,8 @@ function App() {
          <Cancel  />
      </Route>
      
-     <Route path="/success">
-         <Success  />
+     <Route path="/success">        
+      <Success  />
      </Route>
 
      <Route path="/nbaplayers">
@@ -116,7 +116,7 @@ function App() {
 
        
      <Route path="/register">
-      <RegisterPage />
+       {user ? <Redirect to="/login" /> : <RegisterPage />     }    
      </Route>
 
      <Route path="/login">

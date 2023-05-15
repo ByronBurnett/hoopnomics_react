@@ -53,8 +53,8 @@ import { useState } from "react";
    
    return ( 
 
-        <div  className="main max-w-4xl mx-auto bg-white shadow-xl m-5"> 
-        <div className="grid grid-cols-2 gap-5 mb-7">
+        <div  className="main max-w-4xl  mx-auto bg-white shadow-xl m-5"> 
+        <div className="grid lg:grid-cols-2 gap-5 mb-7 sm:grid-cols-1">
         <div className="">
         <Link to={`/postpage/${blog._id}`}> 
         <img src={'http://localhost:4001/' +blog.cover} alt=""/>
