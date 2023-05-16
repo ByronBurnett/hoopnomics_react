@@ -55,8 +55,8 @@ app.post("/checkout", async (req, res) => {
     }));
 });
 
-const PORT1 = process.env.PORT || 4000;
-app.listen(PORT1, () => console.log(`Listening on port ${PORT1}!`));
+//const PORT1 = process.env.PORT || 4000;
+//app.listen(PORT1, () => console.log(`Listening on port ${PORT1}!`));
 
 let app2 = express(); 
 const blogRoutes = require('./Routes/blogs')
