@@ -54,12 +54,12 @@ const PlayerStats = (props) => {
  
   return (
     
-      <div className="grid grid-cols-10 max-w-5xl mx-auto mt-5 px-5 pb-5 border-primary">
-        <div className=" player-stats">
+      <div className="grid grid-cols-10 max-w-5xl mt-5 mx-auto p-8 border-primary items-center">
+        <div className=" player-stats ">
         <h5>GP</h5>
           {playerStats ? playerStats.games_played : ""} 
           </div>
-          <div className=" player-stats">
+          <div className=" player-stats ">
           <h5>MIN</h5>
           {playerStats ? playerStats.min : ""}
         </div>
@@ -92,7 +92,7 @@ const PlayerStats = (props) => {
           {playerStats ? playerStats.pf : "" }
         </div>
         <div className="player-stats">
-          <h5>OREB</h5>
+          <h5 className="">OREB</h5>
           {playerStats ? playerStats.oreb : "" }
         </div>
         <div className="player-stats">

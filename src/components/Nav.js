@@ -98,13 +98,16 @@ logout()
          <Link to="/games" className="block mt-4 lg:inline-block lg:mt-0 text-black-200 mr-4">
            NBA Scores
          </Link>
-         <Link to="/create" className="block mt-4 lg:inline-block lg:mt-0 text-black-200 mr-4">
-           Create Blog
-         </Link>
+         {user && (
+          <Link to="/create" className="block mt-4 lg:inline-block lg:mt-0 text-black-200 mr-4">
+          Create Blog
+        </Link>
+         )}
        </div>
+       
+       
        <div className="m-4">
-        
-        
+         
       {user && ( <div> 
       <span className="text-white">{user.username}</span>
       <div onClick={handleClick} className="w-20 h-10 mx-auto bg-indigo-600 text-white rounded-lg p-2 m-2.5 border border-white cursor-pointer">Logout</div>
@@ -124,7 +127,7 @@ logout()
      <h1 className="flex justify-center font-bold p-3 text-xl border-b border-gray-500 ">
         Shopping Cart
      </h1>
-     <div>
+     <div className="">
       {productsCount > 0 ?
       
          <>

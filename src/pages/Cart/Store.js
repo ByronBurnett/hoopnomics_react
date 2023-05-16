@@ -9,7 +9,7 @@ const Store = () => {
     return ( 
         <div> 
           <div>
-          <h1 className="  text-2xl p-3 font-bold text-center">Welcome to the Store!</h1>
+          <h1 className="text-2xl p-3 font-bold text-center">Welcome to the Store!</h1>
           </div>
        <div className="max-w-4xl lg:grid grid-cols-3 gap-6 mx-auto">
        
