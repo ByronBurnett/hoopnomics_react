@@ -14,7 +14,7 @@ const { authorization} = req.headers
 
  try {
 
- const { _id } =  jwt.verify(token, process.env.SECRET)
+ const { _id } =  jwt.verify(token, process.env.SECRET_1)
 
       
 
