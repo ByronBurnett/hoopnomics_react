@@ -55,7 +55,8 @@ app.post("/checkout", async (req, res) => {
     }));
 });
 
-app.listen(4000, () => console.log("Listening on port 4000!"));
+const PORT1 = process.env.PORT || 4000;
+app.listen(PORT1, () => console.log(`Listening on port ${PORT1}!`));
 
 let app2 = express(); 
 const blogRoutes = require('./Routes/blogs')
@@ -75,9 +76,11 @@ app2.use('/api/blogs', blogRoutes)
 app2.use('/api/user', userRoutes)
 
 // connect to db
+const PORT2 = process.env.PORT2 || 4001;
+
 mongoose.connect(process.env.MONGO_URI)
 .then(() =>   { 
-    app2.listen(4001, () => console.log("Connected to db & Listening on port 4001!"));
+    app2.listen(PORT2, () => console.log(`Connected to db & Listening on port ${PORT2}!`));
 })
 .catch((error) =>{      
     console.log(error)      
