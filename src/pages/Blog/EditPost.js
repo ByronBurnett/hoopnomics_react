@@ -33,7 +33,7 @@ const EditPost = () => {
     const [redirect, setRedirect] = useState(false);
     
     useEffect(() => {
-        fetch('http://localhost:4001/api/blogs/' +id)
+        fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id)
         .then(response => {
             response.json().then(postInfo => {
              setTitle(postInfo.title);
