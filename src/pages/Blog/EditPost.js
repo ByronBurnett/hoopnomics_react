@@ -35,11 +35,19 @@ const EditPost = () => {
     const [error, setError] = useState()
     const [redirect, setRedirect] = useState(false);
     
-   
+  
 
    
     useEffect(() => {
-        fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id)
+        
+      if (!user) {
+        setError('You must be logged in')
+        return
+      }
+      
+    
+      
+      fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id)
         .then(response => {
             response.json().then(postInfo => {
              setTitle(postInfo.title);
@@ -62,10 +70,7 @@ const EditPost = () => {
       if (files?.[0]) {
         data.set('file', files?.[0]);
       }
-      if (!user) {
-        setError('You must be logged in')
-        return
-      }
+      
      
     
      
