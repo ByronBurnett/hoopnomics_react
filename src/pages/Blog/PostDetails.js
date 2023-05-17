@@ -47,10 +47,6 @@ import { useState } from "react";
 
    
    
-   
-   
-   
-   
    return ( 
 
         <div  className="main max-w-4xl  mx-auto bg-white shadow-xl m-5"> 

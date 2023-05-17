@@ -10,8 +10,6 @@ const [isLoading, setIsLoading] = useState(null)
 const {dispatch} = useAuthContext()
 
 
-
-
 const signup = async (username, password) => {
 
     setIsLoading(true)
