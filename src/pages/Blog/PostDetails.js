@@ -27,7 +27,7 @@ import { useState } from "react";
 
 
     e.preventDefault()
-    const response = await fetch('http://localhost:4001/api/blogs/' + blog._id, {
+    const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' + blog._id, {
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${user.token}`

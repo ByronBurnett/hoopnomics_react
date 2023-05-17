@@ -54,7 +54,7 @@ const EditPost = () => {
         data.set('file', files?.[0]);
       }
      
-     const response = await fetch('http://localhost:4001/api/blogs/' +id, {
+     const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id, {
         method: 'PATCH',
         body: data,
         credentials: 'include',
