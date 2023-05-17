@@ -40,14 +40,7 @@ const EditPost = () => {
    
     useEffect(() => {
         
-      if (!user) {
-        setError('You must be logged in')
-        return
-      }
-      
-    
-      
-      fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id)
+     fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id)
         .then(response => {
             response.json().then(postInfo => {
              setTitle(postInfo.title);
@@ -58,9 +51,13 @@ const EditPost = () => {
     }, [])
     
    
-   
-   
     const updatePost = async (e) => {
+      
+      if (!user) {
+        setError('You must be logged in')
+        return
+      }
+      
       e.preventDefault();
       const data = new FormData();
       data.set('title', title);
@@ -71,10 +68,8 @@ const EditPost = () => {
         data.set('file', files?.[0]);
       }
       
-     
-    
-     
-     const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id, {
+        
+    const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id, {
         method: 'PATCH',
         body: data,
         credentials: 'include',
