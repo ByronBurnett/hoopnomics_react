@@ -73,7 +73,7 @@ const PostPage = () => {
 </div>
     
 
-     <img src={`http://localhost:4001/${postInfo.cover}`} alt="" className="object-contain m-5"  />
+     <img src={`https://react-crud-l4om.onrender.com/${postInfo.cover}`} alt="" className="object-contain m-5"  />
     
        <div          
         dangerouslySetInnerHTML={{__html: postInfo.content}}

@@ -57,7 +57,7 @@ import { useState } from "react";
         <div className="grid lg:grid-cols-2 gap-5 mb-7 sm:grid-cols-1">
         <div className="">
         <Link to={`/postpage/${blog._id}`}> 
-        <img src={'http://localhost:4001/' +blog.cover} alt=""/>
+        <img src={'https://react-crud-l4om.onrender.com/' +blog.cover} alt=""/>
         </Link>
         </div>
         <div className="m-0 text-3xl p-2">
