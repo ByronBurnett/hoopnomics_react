@@ -25,6 +25,7 @@ const EditPost = () => {
         ],
       };
     
+
       const {user} = useAuthContext() 
     const {id} = useParams();
     const [title,setTitle] = useState('');
@@ -34,6 +35,9 @@ const EditPost = () => {
     const [error, setError] = useState()
     const [redirect, setRedirect] = useState(false);
     
+   
+
+   
     useEffect(() => {
         fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id)
         .then(response => {
@@ -46,10 +50,7 @@ const EditPost = () => {
     }, [])
     
    
-    if (!user) {
-      setError('You must be logged in')
-      return
-    }
+   
    
     const updatePost = async (e) => {
       e.preventDefault();
@@ -61,7 +62,11 @@ const EditPost = () => {
       if (files?.[0]) {
         data.set('file', files?.[0]);
       }
-
+      if (!user) {
+        setError('You must be logged in')
+        return
+      }
+     
     
      
      const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id, {
