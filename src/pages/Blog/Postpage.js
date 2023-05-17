@@ -15,7 +15,6 @@ const PostPage = () => {
   
     const {id} = useParams();
     const [postInfo, setPostInfo] = useState(null);
-  
     const {user} = useAuthContext()
     const [error, setError] = useState()
     

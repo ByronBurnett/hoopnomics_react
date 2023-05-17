@@ -45,6 +45,12 @@ const EditPost = () => {
         })
     }, [])
     
+   
+    if (!user) {
+      setError('You must be logged in')
+      return
+    }
+   
     const updatePost = async (e) => {
       e.preventDefault();
       const data = new FormData();
@@ -56,10 +62,7 @@ const EditPost = () => {
         data.set('file', files?.[0]);
       }
 
-      if (!user) {
-        setError('You must be logged in')
-        return
-      }
+    
      
      const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id, {
         method: 'PATCH',
