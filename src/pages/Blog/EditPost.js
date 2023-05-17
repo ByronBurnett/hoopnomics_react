@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
-
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const EditPost = () => {
     
@@ -25,11 +25,13 @@ const EditPost = () => {
         ],
       };
     
+      const {user} = useAuthContext() 
     const {id} = useParams();
     const [title,setTitle] = useState('');
     const [summary,setSummary] = useState('');
     const [content,setContent] = useState('');
     const [files, setFiles] = useState('');
+    const [error, setError] = useState()
     const [redirect, setRedirect] = useState(false);
     
     useEffect(() => {
@@ -53,11 +55,20 @@ const EditPost = () => {
       if (files?.[0]) {
         data.set('file', files?.[0]);
       }
+
+      if (!user) {
+        setError('You must be logged in')
+        return
+      }
      
      const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id, {
         method: 'PATCH',
         body: data,
         credentials: 'include',
+        headers: {
+          
+          'Authorization': `Bearer ${user.token}`
+        }
        });
       
       if(response.ok) {
