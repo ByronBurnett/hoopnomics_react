@@ -49,7 +49,7 @@ router.post('/', upload.single('file'), async (req, res ) => {
   const author = req.user._id
                      
     
-  const blog = await (await Post.create({title, summary, content, cover:newPath, author}))
+  const blog = await Post.create({title, summary, content, cover:newPath, author})
   res.status(200).json(blog)
   } catch (error) {
    res.status(400).json({error: error.message})
