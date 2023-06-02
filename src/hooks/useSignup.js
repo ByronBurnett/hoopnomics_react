@@ -15,7 +15,7 @@ const signup = async (username, password) => {
     setIsLoading(true)
     setError(null)
 
-    const response = await fetch('https://react-crud-l4om.onrender.com/api/user/signup', {
+    const response = await fetch('https://mern-crud-g6ul.onrender.com/api/user/signup', {
         method: 'POST',
         headers: {'Content-Type' : 'application/json'},
         body: JSON.stringify({username, password})

@@ -69,7 +69,7 @@ console.log(req.path, req.method)
 next()
 })
 
-app2.use(cors({credentials:true,origin:'https://hoopnomics.com'}));
+app2.use(cors({credentials:true,origin:'https://mern-crud-g6ul.onrender.com/'}));
 app2.use('/uploads', express.static(__dirname + '/uploads'));
 
 app2.use('/api/blogs', blogRoutes)  
