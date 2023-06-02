@@ -69,7 +69,7 @@ console.log(req.path, req.method)
 next()
 })
 
-app2.use(cors({credentials:true,origin:'https://stellar-banoffee-eaf444.netlify.app/'}));
+app2.use(cors({credentials:true,origin:'http://stellar-banoffee-eaf444.netlify.app/'}));
 app2.use('/uploads', express.static(__dirname + '/uploads'));
 
 app2.use('/api/blogs', blogRoutes)  
