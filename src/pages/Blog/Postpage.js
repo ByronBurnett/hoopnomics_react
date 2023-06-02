@@ -30,7 +30,7 @@ const PostPage = () => {
       
       console.log(id);
       
-         fetch(`https://react-crud-l4om.onrender.com/api/blogs/${id}`, {
+         fetch(`https://mern-crud-g6ul.onrender.com/api/blogs/${id}`, {
               method: 'GET',
               headers: {
                 'Authorization': `Bearer ${user.token}`
@@ -72,7 +72,7 @@ const PostPage = () => {
 </div>
     
 
-     <img src={`https://react-crud-l4om.onrender.com/${postInfo.cover}`} alt="" className="object-contain m-5"  />
+     <img src={`https://mern-crud-g6ul.onrender.com/${postInfo.cover}`} alt="" className="object-contain m-5"  />
     
        <div          
         dangerouslySetInnerHTML={{__html: postInfo.content}}

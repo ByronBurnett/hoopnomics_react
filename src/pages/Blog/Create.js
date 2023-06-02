@@ -43,7 +43,7 @@ const Create = () => {
         return
       }
     
-      const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs', {
+      const response = await fetch('https://mern-crud-g6ul.onrender.com/api/blogs', {
         method: 'POST',
         body: data,
         credentials: 'include',

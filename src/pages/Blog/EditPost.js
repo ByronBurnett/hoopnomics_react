@@ -40,7 +40,7 @@ const EditPost = () => {
    
     useEffect(() => {
         
-     fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id)
+     fetch('https://mern-crud-g6ul.onrender.com/api/blogs/' +id)
         .then(response => {
             response.json().then(postInfo => {
              setTitle(postInfo.title);
@@ -69,7 +69,7 @@ const EditPost = () => {
       }
       
         
-    const response = await fetch('https://react-crud-l4om.onrender.com/api/blogs/' +id, {
+    const response = await fetch('https://mern-crud-g6ul.onrender.com/api/blogs/' +id, {
         method: 'PATCH',
         body: data,
         credentials: 'include',
