@@ -58,7 +58,7 @@ logout()
      <div className="block lg:hidden">
        <button
          onClick={() => setIsOpen(!isOpen)}
-         className="flex items-center px-3 py-2 rounded text-black-500 hover:text-black-400"
+         className="flex items-center px-3 py-2 rounded text-white hover:text-white"
        >
          <svg
            className={`fill-current h-3 w-3 ${isOpen ? "hidden" : "block"}`}
