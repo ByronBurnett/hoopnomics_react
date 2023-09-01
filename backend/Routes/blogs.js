@@ -1,105 +1,85 @@
-const express = require('express')
-const Post = require('../models/Post')
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
-const fs = require('fs');
-const mongoose = require('mongoose')
-const requireAuth = require('../middleware/requireAuth')
+const express = require("express");
+const Post = require("../models/Post");
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
+const fs = require("fs");
+const mongoose = require("mongoose");
+const requireAuth = require("../middleware/requireAuth");
 const {
-    
-    getBlogs,
-    getBlog,
-    deleteBlog,
-    
+  getBlogs,
+  getBlog,
+  deleteBlog,
+} = require("../controllers/blogController");
 
-} = require('../controllers/blogController')
-
-
-
-const router = express.Router()
+const router = express.Router();
 
 //require auth for all blog routes
-router.use(requireAuth)
+router.use(requireAuth);
 
 //Get all Blogs
-router.get('/', getBlogs)
+router.get("/", getBlogs);
 
 //Get a single blog
-router.get('/:id', getBlog)
-
+router.get("/:id", getBlog);
 
 //Post a new  blog
-router.post('/', upload.single('file'), async (req, res ) => {
+router.post("/", upload.single("file"), async (req, res) => {
+  const { originalname, path } = req.file;
+  const parts = originalname.split(".");
+  const ext = parts[parts.length - 1];
+  const newPath = path + "." + ext;
+  fs.renameSync(path, newPath);
 
+  const { title, summary, content } = req.body;
 
-    const {originalname,path} = req.file; 
-    const parts = originalname.split('.');
-    const ext = parts[parts.length - 1]; 
-    const newPath = path+'.'+ext;
-    fs.renameSync(path, newPath);
-  
- 
-      
-  const {title,summary,content} = req.body; 
-  
-     
   //add doc to db
   try {
-    
-  const author = req.user._id
-                     
-    
-  const blog = await Post.create({title, summary, content, cover:newPath, author})
-  res.status(200).json(blog)
+    const author = req.user._id;
+
+    const blog = await Post.create({
+      title,
+      summary,
+      content,
+      cover: newPath,
+      author,
+    });
+    res.status(200).json(blog);
   } catch (error) {
-   res.status(400).json({error: error.message})
+    res.status(400).json({ error: error.message });
   }
-
-
-})
-    
-
-
+});
 
 //Delete a new  blog
-router.delete('/:id', deleteBlog)
-   
+router.delete("/:id", deleteBlog);
 
 //Update a blog
-router.patch('/:id', upload.single('file'),  async (req, res) => {
-  
-    let newPath = null;
-    if (req.file) {
-      const {originalname,path} = req.file;
-      const parts = originalname.split('.');
-      const ext = parts[parts.length - 1];
-      newPath = path+'.'+ext;
-      fs.renameSync(path, newPath);
-    }
-
-
-     
-    const {id} = req.params
-
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-           return res.status(404).json({error: 'No such Blog'})
-         }
-
-
-const blog = await Post.findOneAndUpdate({_id : id} , {
-...req.body
-   
-   })
-   
-   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: 'No such Blog'})
+router.patch("/:id", upload.single("file"), async (req, res) => {
+  let newPath = null;
+  if (req.file) {
+    const { originalname, path } = req.file;
+    const parts = originalname.split(".");
+    const ext = parts[parts.length - 1];
+    newPath = path + "." + ext;
+    fs.renameSync(path, newPath);
   }
-  res.status(200).json(blog)
 
+  const { id } = req.params;
 
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such Blog" });
+  }
 
-})
+  const blog = await Post.findOneAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
 
-      
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: "No such Blog" });
+  }
+  res.status(200).json(blog);
+});
 
-module.exports = router
+module.exports = router;
